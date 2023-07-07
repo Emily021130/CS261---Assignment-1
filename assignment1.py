@@ -16,13 +16,13 @@ def min_max(arr: StaticArray) -> ():
     """
     TODO: Write this implementation
     """
-    min_num = arr.get(0)
-    max_num = arr.get(0)
+    min_num = arr[0]
+    max_num = arr[0]
     for index in range(arr.length()):
-        if arr.get(index) < min_num:
-            min_num = arr.get(index)
-        elif arr.get(index) > max_num:
-            max_num = arr.get(index)
+        if arr[index] < min_num:
+            min_num = arr[index]
+        elif arr[index] > max_num:
+            max_num = arr[index]
     return min_num, max_num
 
 # ------------------- PROBLEM 2 - FIZZ_BUZZ ---------------------------------
