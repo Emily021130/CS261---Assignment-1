@@ -12,11 +12,18 @@ from static_array import *
 
 # ------------------- PROBLEM 1 - MIN_MAX -----------------------------------
 
-def min_max(arr: StaticArray) -> tuple[int, int]:
+def min_max(arr: StaticArray) -> ():
     """
     TODO: Write this implementation
     """
-    pass
+    min_num = arr.get(0)
+    max_num = arr.get(0)
+    for index in range(arr.length()):
+        if arr.get(index) < min_num:
+            min_num = arr.get(index)
+        elif arr.get(index) > max_num:
+            max_num = arr.get(index)
+    return min_num, max_num
 
 # ------------------- PROBLEM 2 - FIZZ_BUZZ ---------------------------------
 
