@@ -49,7 +49,7 @@ def reverse(arr: StaticArray) -> None:
     """
     TODO: Write this implementation
     """
-    pass
+
 
 # ------------------- PROBLEM 4 - ROTATE ------------------------------------
 
