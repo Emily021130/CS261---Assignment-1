@@ -39,6 +39,8 @@ def fizz_buzz(arr: StaticArray) -> StaticArray:
             new_arr[index] = "fizz"
         elif arr[index] % 5 == 0:
             new_arr[index] = "buzz"
+        else:
+            new_arr[index] = arr[index]
     return new_arr
 
 # ------------------- PROBLEM 3 - REVERSE -----------------------------------
