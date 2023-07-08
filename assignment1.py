@@ -60,7 +60,17 @@ def rotate(arr: StaticArray, steps: int) -> StaticArray:
     """
     TODO: Write this implementation
     """
-
+    new_arr = StaticArray(arr.length())
+    for index in range(arr.length()):
+        if steps > 0:
+            move = (index + steps) % arr.length()
+            new_arr[move] = arr[index]
+        elif steps < 0:
+            move = (index -steps + arr.length()) % arr.length()
+            new_arr[move] = arr[index]
+        else:
+            new_arr[index] = arr[index]
+    return new_arr
 
 # ------------------- PROBLEM 5 - SA_RANGE ----------------------------------
 
