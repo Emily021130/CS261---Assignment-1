@@ -49,7 +49,10 @@ def reverse(arr: StaticArray) -> None:
     """
     TODO: Write this implementation
     """
-
+    for index in range(arr.length() // 2):
+        temp = arr[index]
+        arr[index] = arr[arr.length() - 1 - index]
+        arr[arr.length() -1 - index] = temp
 
 # ------------------- PROBLEM 4 - ROTATE ------------------------------------
 
