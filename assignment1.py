@@ -60,7 +60,7 @@ def rotate(arr: StaticArray, steps: int) -> StaticArray:
     """
     TODO: Write this implementation
     """
-    pass
+
 
 # ------------------- PROBLEM 5 - SA_RANGE ----------------------------------
 
