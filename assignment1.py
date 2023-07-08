@@ -66,7 +66,7 @@ def rotate(arr: StaticArray, steps: int) -> StaticArray:
             move = (index + steps) % arr.length()
             new_arr[move] = arr[index]
         elif steps < 0:
-            move = (index -steps + arr.length()) % arr.length()
+            move = (index + steps + arr.length()) % arr.length()
             new_arr[move] = arr[index]
         else:
             new_arr[index] = arr[index]
