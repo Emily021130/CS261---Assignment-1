@@ -78,7 +78,18 @@ def sa_range(start: int, end: int) -> StaticArray:
     """
     TODO: Write this implementation
     """
-    pass
+    new_arr = []
+    if start <= end:
+        length = end - start + 1
+        new_arr = StaticArray(length)
+        for index in range(length):
+            new_arr[index] = start + index
+    if start > end:
+        length = start - end + 1
+        new_arr = StaticArray(length)
+        for index in range(length):
+            new_arr[index] = start - index
+    return new_arr
 
 # ------------------- PROBLEM 6 - IS_SORTED ---------------------------------
 
