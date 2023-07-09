@@ -160,12 +160,13 @@ def count_sort(arr: StaticArray) -> StaticArray:
     max_num = min_max(arr)[1]
     num_range = max_num - min_num + 1
     count_arr = StaticArray(num_range)
-    position_arr = StaticArray(num_range)
     new_arr = StaticArray(arr.length())
     for index in range(num_range):
         count_arr[index] = 0
     for index in range(arr.length()):
         count_arr[num_range - (arr[index] - min_num) - 1] += 1
+    position_arr = StaticArray(num_range)
+    position_arr[0] = count_arr[0]
     for index in range(1, num_range):
         position_arr[index] += count_arr[index - 1]
     for index in range(arr.length()):
