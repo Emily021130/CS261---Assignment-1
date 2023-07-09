@@ -94,7 +94,22 @@ def is_sorted(arr: StaticArray) -> int:
     """
     TODO: Write this implementation
     """
-    pass
+    ascending = 0
+    decending = 0
+    if arr.length() == 1:
+        return 1
+    else:
+        for index in range(arr.length() - 1):
+            if arr[index] < arr[index + 1]:
+                ascending += 1
+            elif arr[index] > arr[index + 1]:
+                decending += 1
+        if ascending == arr.length() - 1:
+            return 1
+        elif decending == arr.length() - 1:
+            return -1
+        else:
+            return 0
 
 # ------------------- PROBLEM 7 - FIND_MODE -----------------------------------
 
