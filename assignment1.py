@@ -12,7 +12,7 @@ from static_array import *
 
 # ------------------- PROBLEM 1 - MIN_MAX -----------------------------------
 
-def min_max(arr: StaticArray) -> ():
+def min_max(arr: StaticArray) -> tuple[int, int]:
     """
     TODO: Write this implementation
     """
@@ -156,7 +156,22 @@ def count_sort(arr: StaticArray) -> StaticArray:
     """
     TODO: Write this implementation
     """
-    pass
+    min_num = min_max(arr)[0]
+    max_num = min_max(arr)[1]
+    num_range = max_num - min_num + 1
+    count_arr = StaticArray(num_range)
+    position_arr = StaticArray(num_range)
+    new_arr = StaticArray(arr.length())
+    for index in range(num_range):
+        count_arr[index] = 0
+    for index in range(arr.length()):
+        count_arr[num_range - (arr[index] - min_num) - 1] += 1
+    for index in range(1, num_range):
+        position_arr[index] += count_arr[index - 1]
+    for index in range(arr.length()):
+        new_arr[position_arr[num_range - (arr[index] - min_num) - 1] - 1] = arr[index]
+        position_arr[num_range - (arr[index] - min_num) - 1] -= 1
+    return new_arr
 
 # ------------------- PROBLEM 10 - SORTED SQUARES ---------------------------
 
