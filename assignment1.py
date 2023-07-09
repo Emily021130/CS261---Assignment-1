@@ -164,7 +164,16 @@ def sorted_squares(arr: StaticArray) -> StaticArray:
     """
     TODO: Write this implementation
     """
-    pass
+    new_arr = StaticArray(arr.length())
+    count = arr.length() - 1
+    for index in range(arr.length()):
+        if abs(arr[index]) < abs(arr[arr.length() - 1 - index]):
+            new_arr[count] = arr[arr.length() - 1 - index] ** 2
+            count -= 1
+        else:
+            new_arr[count] = arr[index] ** 2
+            count -= 1
+    return new_arr
 
 # ------------------- BASIC TESTING -----------------------------------------
 
