@@ -165,13 +165,11 @@ def count_sort(arr: StaticArray) -> StaticArray:
         count_arr[index] = 0
     for index in range(arr.length()):
         count_arr[num_range - (arr[index] - min_num) - 1] += 1
-    position_arr = StaticArray(num_range)
-    position_arr[0] = count_arr[0]
     for index in range(1, num_range):
-        position_arr[index] += count_arr[index - 1]
+        count_arr[index] += count_arr[index - 1]
     for index in range(arr.length()):
-        new_arr[position_arr[num_range - (arr[index] - min_num) - 1] - 1] = arr[index]
-        position_arr[num_range - (arr[index] - min_num) - 1] -= 1
+        new_arr[count_arr[num_range - (arr[index] - min_num) - 1] - 1] = arr[index]
+        count_arr[num_range - (arr[index] - min_num) - 1] -= 1
     return new_arr
 
 # ------------------- PROBLEM 10 - SORTED SQUARES ---------------------------
