@@ -174,7 +174,7 @@ def sorted_squares(arr: StaticArray) -> StaticArray:
             count -= 1
             right -= 1
         else:
-            new_arr[count] = arr[index] ** 2
+            new_arr[count] = arr[left] ** 2
             count -= 1
             left += 1
     return new_arr
