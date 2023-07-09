@@ -118,7 +118,7 @@ def find_mode(arr: StaticArray) -> tuple[object, int]:
     TODO: Write this implementation
     """
     count = 1
-    mode = arr[1]
+    mode = arr[0]
     frequency = 1
     for index in range(1, arr.length()):
         if arr[index] == arr[index - 1]:
