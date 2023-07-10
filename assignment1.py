@@ -3,7 +3,8 @@
 # Course: CS261 - Data Structures
 # Assignment: Assignment 1
 # Due Date: 07/11/2023
-# Description:
+# Description: This is a python fundamental review with ten different classes using a class
+#              StaticArray. They are required to be implemented with certain complexity.
 
 
 import random
@@ -14,7 +15,7 @@ from static_array import *
 
 def min_max(arr: StaticArray) -> tuple[int, int]:
     """
-    TODO: Write this implementation
+    TODO: Return a tuple of the minimum and maximum values of the given array.
     """
     min_num = arr[0]
     max_num = arr[0]
@@ -29,7 +30,10 @@ def min_max(arr: StaticArray) -> tuple[int, int]:
 
 def fizz_buzz(arr: StaticArray) -> StaticArray:
     """
-    TODO: Write this implementation
+    TODO: Return a new array with string "fizz" if the number in the original array is
+          divisible by 3, with string "buzz" if the number in the original array is
+          divisible by 5, and string "fizzbuzz" if the number in the original array is
+          both a multiple of 3 and a multiple of 5.
     """
     new_arr = StaticArray(arr.length())
     for index in range(arr.length()):
@@ -47,7 +51,7 @@ def fizz_buzz(arr: StaticArray) -> StaticArray:
 
 def reverse(arr: StaticArray) -> None:
     """
-    TODO: Write this implementation
+    TODO: Reserve the order of the elements in the given array.
     """
     for index in range(arr.length() // 2):
         temp = arr[index]
@@ -58,7 +62,8 @@ def reverse(arr: StaticArray) -> None:
 
 def rotate(arr: StaticArray, steps: int) -> StaticArray:
     """
-    TODO: Write this implementation
+    TODO: Return a new array with all of the elements from the original array
+          which are shifted right or left given steps number of times.
     """
     new_arr = StaticArray(arr.length())
     for index in range(arr.length()):
@@ -76,7 +81,8 @@ def rotate(arr: StaticArray, steps: int) -> StaticArray:
 
 def sa_range(start: int, end: int) -> StaticArray:
     """
-    TODO: Write this implementation
+    TODO: Returns an array that contains all the consecutive integers between
+          given start and end (inclusive).
     """
     length = abs(start - end) + 1
     new_arr = StaticArray(length)
@@ -92,10 +98,12 @@ def sa_range(start: int, end: int) -> StaticArray:
 
 def is_sorted(arr: StaticArray) -> int:
     """
-    TODO: Write this implementation
+    TODO: Return 1 if the given array is sorted in strictly ascending order.
+          Return -1 if the list is sorted in strictly descending order.
+          Return 0 otherwise.
     """
     ascending = 0
-    decending = 0
+    descending = 0
     if arr.length() == 1:
         return 1
     else:
@@ -103,10 +111,10 @@ def is_sorted(arr: StaticArray) -> int:
             if arr[index] < arr[index + 1]:
                 ascending += 1
             elif arr[index] > arr[index + 1]:
-                decending += 1
+                descending += 1
         if ascending == arr.length() - 1:
             return 1
-        elif decending == arr.length() - 1:
+        elif descending == arr.length() - 1:
             return -1
         else:
             return 0
@@ -115,7 +123,9 @@ def is_sorted(arr: StaticArray) -> int:
 
 def find_mode(arr: StaticArray) -> tuple[object, int]:
     """
-    TODO: Write this implementation
+    TODO: Return a tuple of the mode of the given array and its frequency. If there
+          is more than one element that has the highest frequency, select the one
+          that occurs first in the array.
     """
     count = 1
     mode = arr[0]
@@ -134,7 +144,7 @@ def find_mode(arr: StaticArray) -> tuple[object, int]:
 
 def remove_duplicates(arr: StaticArray) -> StaticArray:
     """
-    TODO: Write this implementation
+    TODO: Return a new array with all duplicate values removed.
     """
     repeat = 0
     for index in range(1, arr.length()):
@@ -154,7 +164,8 @@ def remove_duplicates(arr: StaticArray) -> StaticArray:
 
 def count_sort(arr: StaticArray) -> StaticArray:
     """
-    TODO: Write this implementation
+    TODO: Return a new array with the same content of the given array sorted
+          in non-ascending order.
     """
     min_num = min_max(arr)[0]
     max_num = min_max(arr)[1]
@@ -176,7 +187,8 @@ def count_sort(arr: StaticArray) -> StaticArray:
 
 def sorted_squares(arr: StaticArray) -> StaticArray:
     """
-    TODO: Write this implementation
+    TODO: Return a new array with squares of the values from the given array,
+          sorted in non-descending order.
     """
     new_arr = StaticArray(arr.length())
     count = arr.length() - 1
